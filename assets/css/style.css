@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header" "select" "main" "footer";
+  background: #f5f5f5;
+  height: 100vh;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1b1e38;
+  color: #fff;
+}
+
+.select-label {
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: #fff;
+  background-color: #151835;
+}
+
+.precio {
+  width: 80%;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 0;
+  color: gray;
+  margin-top: 0.5rem;
+}
+.sidebar {
+  display: none;
+}
+
+.list {
+  font-size: 14px;
+  list-style: none;
+}
+.list-texto {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.grid-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: #111852;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.card:first-child {
+  display: flex;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+  min-height: 75vh;
+  background-color: #101328;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+.select {
+  grid-area: select;
+}
+.imagenes {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titulo {
+  font-size: 16px;
+}
+.game {
+  font-size: 16px;
+}
+.button {
+  font-size: 16px;
+  padding: 12px;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 150px;
+  border-radius: 0.25rem;
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+.footer {
+  font-size: 12px;
+  padding: 20px;
+  background-color: #151835;
+  color: #ccc;
+}
+
+.pagination a {
+  color: #fff;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: #111852;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .grid-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card:nth-child(2) {
+    display: flex;
+  }
+  .grid-container {
+    grid-template-areas:
+      "header header"
+      "select main"
+      "footer footer";
+  }
+  .header .hamburguesa {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+  }
+  .list {
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .card {
+    display: flex;
+  }
+
+  .grid-container {
+    grid-template-areas:
+      "header select"
+      "header main"
+      "footer main";
+    grid-template-columns: 13em 1fr;
+  }
+  .header {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .titulo {
+    display: flex;
+    justify-content: center;
+  }
+  .list {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+  }
+  .list-texto {
+    display: flex;
+    justify-content: center;
+  }
+}
